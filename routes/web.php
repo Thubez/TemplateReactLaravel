@@ -5,7 +5,19 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+// landing page 
 Route::get('/', function () {
+    return Inertia::render('LandingPage');
+});
+Route::get('/siswa/dashboard', function () {
+    return Inertia::render('Siswa/Dashboard');
+});
+
+
+
+
+
+Route::get('/s', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -24,4 +36,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
