@@ -4,6 +4,8 @@ import { Head, Link } from '@inertiajs/react'
 import React from 'react'
 import { Book, Brain, BarChartIcon as ChartBar, Facebook, FileCheck, GraduationCap, Instagram, LayoutDashboard, Lightbulb, Menu, PenTool, Target, Trophy, Twitter, Youtube, Zap } from 'lucide-react'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/Components/ui/dropdown-menu'
+import { Header } from '@/Components/Header'
+
 
 
 const LandingPage = () => {
@@ -12,54 +14,15 @@ const LandingPage = () => {
      <Head title="Landing Page" />
      <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Brain className="w-8 h-8 text-primary" />
-            <span className="font-bold text-xl">TryOutPro AI</span>
-          </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="#" className="text-sm font-medium hover:text-primary">Beranda</Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary">Fitur AI</Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary">Ujian</Link>
-            <Link href="#" className="text-sm font-medium hover:text-primary">Tentang Kami</Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button variant="outline" className="hidden md:inline-flex">Masuk</Button>
-            <Button>Daftar</Button>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild className="md:hidden">
-                <Button variant="outline" size="icon">
-                  <Menu className="h-4 w-4" />
-                  <span className="sr-only">Toggle menu</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem>
-                  <Link href="#">Beranda</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="#">Fitur AI</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="#">Ujian</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link href="#">Tentang Kami</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-        </div>
-      </header>
-
+  
+      <Header/>
       <main className="flex-grow">
         {/* Hero Section dengan Fokus AI */}
         <section className="container mx-auto px-4 py-12 md:py-24">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-                Revolusi Persiapan Ujian dengan Kecerdasan Buatan
+              Analisis AI Pintar, Raih Kesuksesan di Ujian!
               </h1>
               <p className="text-muted-foreground">
                 TryOutPro AI menghadirkan pengalaman belajar personal yang dioptimalkan oleh teknologi AI canggih. Tingkatkan skor Anda dengan analisis mendalam dan rekomendasi yang disesuaikan untuk setiap jenis ujian.
@@ -71,7 +34,7 @@ const LandingPage = () => {
             </div>
             <div className="relative h-[400px]">
               <img
-                src="https://plus.unsplash.com/premium_photo-1661726901465-a02a10644e93?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/cta2.png"
                 alt="Ilustrasi AI membantu siswa belajar"
              
                 className="object-contain rounded"
@@ -80,10 +43,11 @@ const LandingPage = () => {
           </div>
         </section>
 
+
         {/* Fitur AI Unggulan */}
-        <section className="bg-gray-50 py-16">
+        <section className="bg-gray-50 py-16 ">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Keunggulan AI TryOutPro</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 ">Keunggulan AI TryOutPro</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <Card>
                 <CardContent className="p-6 flex flex-col items-center text-center">

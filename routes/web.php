@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExamController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -11,6 +12,13 @@ Route::get('/', function () {
 });
 Route::get('/siswa/dashboard', function () {
     return Inertia::render('Siswa/Dashboard');
+});
+Route::get('/exam', function () {
+    return Inertia::render('ExamInterface');
+});
+
+Route::get('/ujian/utbk', function () {
+    return Inertia::render('Ujian/Utbk');
 });
 
 
@@ -37,3 +45,6 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+
+Route::get('/exam/{category}', [ExamController::class, 'detailPageExam'])->name('exam.detailPageExam');
